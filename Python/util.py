@@ -17,18 +17,18 @@ def askIntRange(min, max):
     return int(choice)
 
 def fileExist(fileName):
-    return os.path.exists(settings.pwd + fileName)
+    return os.path.exists(os.getcwd() + fileName)
 
 def loadFile(path)):
-    if not fileExist(settings.pwd + path):
+    if not fileExist(os.getcwd() + path):
         createConfig()
     else:
         load = []
-        with open(settings.pwd + path, 'r') as file:
+        with open(os.getcwd() + path, 'r') as file:
             for line in file:
                 load.append(line)
     return load
 
 def writeFile(path):
-    with open(settings.pwd + path, 'w') as file:
+    with open(os.getcwd() + path, 'w') as file:
         file.write("Something..")
